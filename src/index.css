@@ -1,13 +1,246 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --background-image : linear-gradient(120deg, rgb(0, 181, 148, 0.9), rgba(1, 84,70, 0.67));
+  --background-overlay: rgba(0,0,0,0.4);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul{
+  list-style-type: none;
+}
+
+img{
+  width:100%
+}
+
+body{
+  font: "Manrope", sans-serif;
+  overflow: auto;
+}
+
+a{
+  font : inherit;
+  text-decoration: none;
+  color: white;
+}
+
+/*Menu Button */
+.menu-btn{
+  position: absolute;
+  right : 90px;
+  z-index:100;
+  margin-top: 50px;
+}
+
+.menu-btn button {
+  background-color: transparent;
+  font-size: 40px;
+  border: none; 
+  color: white;
+  cursor: pointer;
+}
+/* Header */
+.header{
+  position: absolute;
+  height : 0px;
+  overflow: hidden;
+  right: 0;
+  width: 220px;
+  transition: all 0.5s ease-in-out;
+}
+
+.header.open {
+  background-color: var(--background-overlay);
+  height: 100%;
+}
+
+.header nav ul {
+  min-height:100vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.header nav ul li{
+  font-size: 20px;
+  margin : 20px 0;
+}
+
+/*Home Page*/
+
+.home{
+  background: url('./background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height:100vh;
+}
+ 
+.home .overlay{
+  background-image: var(--background-image) ;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align : center;
+  min-height: 100vh;
+  color: white;
+}
+
+.home .overlay h1{
+  text-transform: uppercase;
+  font-size: 82px;
+}
+
+.home .overlay p{
+  font-size: 34px;
+}
+
+.home .overlay ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.home .overlay ul li{
+  margin : 0 20px;
+
+}
+
+.home .overlay ul li a{
+  font-size: 48px;
+}
+/*Projects*/
+.projects{
+  background-image: var(--background-image);
+}
+
+.projects h1{
+  padding:  50px 80px;
+  color: white;
+}
+
+.projects .cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width:  1100px;
+  margin: auto;
+  gap: 20px;
+  color: white;
+  padding-bottom: 10px;
+}
+.projects .cards h4{
+  font-size: 24px;
+  margin: 10px 0 10px;
+}
+.projects .cards  p {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.projects .cards ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projects .cards ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.projects .cards ul li a.github{
+  background-color: #333;
+  padding: 5px;
+  font-size: 16px;
+}
+.projects .cards ul li a.demo{
+  background-color: #182d81;
+  padding: 5px;
+  font-size: 16px;
+}
+
+/*contact*/
+.contact{
+  background-image: var(--background-image);
+  height: 100vh;
+}
+.contact ul{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.contact ul li{
+  margin:10px 0;
+  
+}
+
+.contact ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:32px;
+}
+.contact h1{
+  padding: 50px 80px;
+  color: white;
+  font-size: 30px;
+}
+@media (max-width: 1200px){
+  .projects .cards {
+    padding: 0 20px 20px;
+  }
+}
+@media (max-width: 990px) {
+  .menu-btn{
+    right: 30px;
+  }
+
+  .home .overlay h1{
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 800px){
+  .projects .cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .home .overlay h1{
+    font-size: 30px;
+  }
+  .home .overlay p{
+    font-size: 20px;
+    margin-top:16px;
+  } 
+  .home .overlay ul li a{
+    font-size: 24px;
+  }
+  .contact ul li a{
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .contact h1, .projects h1 {
+    font-size:26px;
+    padding: 50px 30px;
+  }
+  .projects .cards{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .projects .cards p {
+    font-size: 15px;
+  }
 }
