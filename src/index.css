@@ -128,7 +128,7 @@ a{
 
 .projects h1{
   padding:  50px 80px;
-  font-size: 30px;
+  font-size: 40px;
   color: white;
 }
 
@@ -147,6 +147,7 @@ a{
 }
 .projects .cards  p {
   font-size: 22px;
+  text-align: justify;
   margin-bottom: 10px;
 }
 .projects .cards ul{
@@ -199,7 +200,7 @@ a{
 .contact h1{
   padding: 50px 80px;
   color: white;
-  font-size: 30px;
+  font-size: 40px;
 }
 @media (max-width: 1200px){
   .projects .cards {
@@ -219,6 +220,9 @@ a{
 @media (max-width: 800px){
   .projects .cards{
     grid-template-columns: repeat(2, 1fr);
+  }
+  .projects .cards .article img{
+    height: 350px;
   }
 }
 
@@ -250,5 +254,8 @@ a{
   }
   .projects .cards p {
     font-size: 15px;
+  }
+  .projects .cards .article img{
+    height: 300px;
   }
 }
